@@ -142,8 +142,22 @@ class Magneto_Debug_Block_Debug extends Magneto_Debug_Block_Abstract
             'template' => 'debug_models_panel',           // child block defined in layout xml
         );
         return $panel;
-    } 
-
+    }
+    
+    protected function createEventsPanel() {
+    	$title = 'Events';
+    	$nEvents = count(Mage::getSingleton('debug/observer')->getFilteredEvents());
+    	$panel = array(
+    	    'title' => $title,
+    	    'has_content' => true,
+    	    'url' => NULL,
+    	    'dom_id' => 'debug-panel-' . $title,
+    	    'nav_title' => $title,
+    	    'nav_subtitle' => "{$nEvents} dispatched events",
+    	    'template' => 'debug_events_panel'				// child block defined in layout xml
+    	);
+    	return $panel;
+    }
 
     protected function createUtilsPanel() {
         $title = 'Utilities';
