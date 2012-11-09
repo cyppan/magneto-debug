@@ -213,6 +213,7 @@ class Magneto_Debug_Block_Debug extends Magneto_Debug_Block_Abstract
 		$panels[] = $this->createControllerPanel();
 		$panels[] = $this->createModelsPanel();
 		$panels[] = $this->createLayoutPanel();
+        $panels[] = $this->createEventsPanel();
         $panels[] = $this->createBlocksPanel();
         $panels[] = $this->createUtilsPanel();
         $panels[] = $this->createLogsPanel();
